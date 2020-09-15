@@ -20,5 +20,6 @@ for each seed, genesis location and date are chosen randomly on a 1 km resolutio
  | |  |   stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics 
  | |  |   *intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions
 
+![first_flow_chart](https://user-images.githubusercontent.com/46905677/93243910-bb8f0700-f73d-11ea-80ad-3ae64ea87326.jpg)
 
 ### Getting Started with CHAZ
