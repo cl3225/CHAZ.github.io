@@ -23,3 +23,9 @@ for each seed, genesis location and date are chosen randomly on a 1 km resolutio
 ![first_flow_chart](https://user-images.githubusercontent.com/46905677/93243910-bb8f0700-f73d-11ea-80ad-3ae64ea87326.jpg)
 
 ### Getting Started with CHAZ
+
+Prior to calculating genesis, intensity, and track, the data must be preprocessed. After preprocessing data, CHAZ returns genesis, intensity, and track information that can be passed to numerous other models, such as storm surge models and a wind compenent model.
+
+![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
+
+### Running CHAZ 
