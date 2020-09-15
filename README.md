@@ -29,3 +29,14 @@ Prior to calculating genesis, intensity, and track, the data must be preprocesse
 ![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
 ### Running CHAZ 
+
+To run CHAZ, change the values of the global variables outlined below contained in `Namelist.py`. Below the global variables that can be changed are outlined below.
+
+`TCGIinput = 'TCGI_CRH_SST` - environmental parameters used as input for TCGI 
+`CHAZ_ENS = 1` - number of ensemble members per year
+`CHAZ__Int_ENS = 40` - number of ensemble members for intensity model
+`seedN = 1000` - annual seeding rate for random seeding
+`landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
+`ipath = ''` - location of environmental data for seeding ratio (string)
+`opath = ''` - location of pik file with observed best track global predictors (string)
+
