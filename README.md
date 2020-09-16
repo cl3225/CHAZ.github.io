@@ -1,7 +1,7 @@
 # CHAZ
 ## (Columbia Tropical Cyclone Hazard Model)
 
-### Overview 
+## Overview 
 
 
 The Columbia Tropical Cyclone Hazard Model (CHAZ) is a statistical-dynamical downscaling tropical cyclone hazard model. CHAZ consists of three components: a genesis model, a track model, and an intensity model. 
@@ -13,7 +13,7 @@ The track model moves the storm forward via a Beta-Advection Model. From the Bet
 The intensity model evolves the storms beyond genesis using an Autoregressive Model that involves a deterministic element and a stochastic forcing element. 
 
 
-##### 3 Components of CHAZ
+#### 3 Components of CHAZ
 
 
 Genesis | Track | Intensity
@@ -21,22 +21,43 @@ Genesis | Track | Intensity
 seeds domain with weak vortices  | further evolution of storm beyond genesis | further evolution of storm beyond genesis 
 seeding rate, found via TCGI, depends on environmental conditions | moves storm by a beta advection model | 2 components: empirical linear regression model and stochastic element
 for each seed, genesis location and date are chosen randomly on a 1 km resolution within the a selected month | predictors found based on beta-advection model|  empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment 
- | |  |   stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics 
- | |  |   *intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions
+&nbsp;|&nbsp;|  stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics 
+&nbsp;|&nbsp;|  *intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions
 
 
 
 ![first_flow_chart](https://user-images.githubusercontent.com/46905677/93243910-bb8f0700-f73d-11ea-80ad-3ae64ea87326.jpg)
 
-### Getting Started with CHAZ
+## Getting Started with CHAZ
+
+### Getting the code
+
+TBD 
+
+### System dependencies 
+
+#### Operating System
+
+* Linux
+
+#### Python
+
+* Python 2
+
+* [NumPy](https://numpy.org/)
+
+* [pandas](https://pandas.pydata.org/)
+
+
+## Running CHAZ 
 
 Prior to calculating genesis, intensity, and track, the data must be preprocessed. After preprocessing data, CHAZ returns genesis, intensity, and track information that can be passed to numerous other models, such as storm surge models and a wind compenent model.
 
-![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
-
-### Running CHAZ 
-
 To run CHAZ, change the values of the global variables outlined below contained in `Namelist.py`. Below the global variables that can be changed are outlined below.
+
+`Model = 'ERAInterim'` - model that provides parameters for downscaling (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
+
+`ENS = 'r1i1p1'` - global model (str)
 
 `TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
 
@@ -67,3 +88,6 @@ To run CHAZ, change the values of the global variables outlined below contained 
 `calBam = ` - if `True`, track will  be calculated, if `False` track will not be calculated (bool)
 
 `calInt = ` - if `True`, intensity will  be calculated, if `False` intensity will not be calculated (bool)
+
+![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
+
