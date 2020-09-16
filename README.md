@@ -32,11 +32,32 @@ Prior to calculating genesis, intensity, and track, the data must be preprocesse
 
 To run CHAZ, change the values of the global variables outlined below contained in `Namelist.py`. Below the global variables that can be changed are outlined below.
 
-`TCGIinput = 'TCGI_CRH_SST` - environmental parameters used as input for TCGI 
-`CHAZ_ENS = 1` - number of ensemble members per year
-`CHAZ__Int_ENS = 40` - number of ensemble members for intensity model
-`seedN = 1000` - annual seeding rate for random seeding
-`landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
-`ipath = ''` - location of environmental data for seeding ratio (string)
-`opath = ''` - location of pik file with observed best track global predictors (string)
+`TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
 
+`CHAZ_ENS = 1` - number of ensemble members per year (int)
+
+`CHAZ__Int_ENS = 40` - number of ensemble members for intensity model (int)
+
+`seedN = 1000` - annual seeding rate for random seeding (int)
+
+`landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
+
+`ipath = ''` - location of environmental data for seeding ratio (str)
+
+`opath = ''` - location of pik file with observed best track global predictors (str)
+
+`obs_bt_path = ''` - location of observed best track data (str)
+
+`Year1 = ` - first year (int)
+
+`Year2 = ` - last year (int)
+
+`runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
+
+`runCHAZ = ` - if `True`, CHAZ will run, if `False` CHAZ will not run (bool)
+
+`calGen = ` - if `True`, genesis will  be calculated, if `False` genesis will not be calculated (bool)
+
+`calBam = ` - if `True`, track will  be calculated, if `False` track will not be calculated (bool)
+
+`calInt = ` - if `True`, intensity will  be calculated, if `False` intensity will not be calculated (bool)
