@@ -12,6 +12,7 @@ The track model moves the storm forward via a Beta-Advection Model. From the Bet
 The intensity model evolves the storms beyond genesis using an Autoregressive Model that involves a deterministic element and a stochastic forcing element. 
 
 ##### 3 Components of CHAZ
+
 Genesis | Track | Intensity
 ------------ | ------------- | -------------
 seeds domain with weak vortices  | further evolution of storm beyond genesis | further evolution of storm beyond genesis 
