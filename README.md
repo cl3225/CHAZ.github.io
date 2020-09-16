@@ -3,6 +3,7 @@
 
 ### Overview 
 
+
 The Columbia Tropical Cyclone Hazard Model (CHAZ) is a statistical-dynamical downscaling tropical cyclone hazard model. CHAZ consists of three components: a genesis model, a track model, and an intensity model. 
 
 The genesis model relies on the Tropical Cyclone Genesis Index (TCGI, developed by Tippett et al, 2011). Using the TCGI, the seeding rate, which describes the rate at which weak vortices are formed throughout the domain is found. The seeding rate is then passed to the remaining two components, the track and intensity models, within which the storm evolves beyond genesis. 
@@ -10,6 +11,7 @@ The genesis model relies on the Tropical Cyclone Genesis Index (TCGI, developed 
 The track model moves the storm forward via a Beta-Advection Model. From the Beta-Advection Model, predictors are calculated. 
 
 The intensity model evolves the storms beyond genesis using an Autoregressive Model that involves a deterministic element and a stochastic forcing element. 
+
 
 ##### 3 Components of CHAZ
 
