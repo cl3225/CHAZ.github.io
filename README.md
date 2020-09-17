@@ -116,9 +116,7 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 1. Copy the reanalysis data to your home directory in a new folder.
 
-2. Now go to that folder and run the following command:
-
-`$ ./CHAZ.py`
+2. Now go to that folder and run the following command:`$ ./CHAZ.py`
 
 ![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
