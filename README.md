@@ -40,6 +40,10 @@ TBD
 
 * Linux
 
+#### Text Editor 
+
+In the below instructions, vi is used, but any text editor will do.
+
 #### Python
 
 * Python 2
@@ -48,6 +52,27 @@ TBD
 
 * [pandas](https://pandas.pydata.org/)
 
+The remaining portion of **Getting Started with CHAZ** assumes that the [Anaconda Python Distribution](https://www.anaconda.com/) is installed, which is a simple method to install the above. The below steps can be done without Anaconda installed, so in that case, change accordingly. 
+
+### Building CHAZ
+
+1. Confirm you are using bash shell: `echo $0`
+
+-bash
+
+2.  in your .bashrc (in your home directory) add the following lines
+
+`$ vi .bashrc'
+
+    ## User specific aliases and functions
+    #export PYTHONPATH=/home/clee/lib/python
+    source /opt/anaconda3/etc/profile.d/conda.sh
+    export PATH=/opt/anaconda3/bin:$PATH
+    conda activate pangeoxtd27
+        
+
+    alias sls='ls -h --color=always'
+    alias la='ls -gha --color=always'
 
 ## Running CHAZ 
 
@@ -55,7 +80,7 @@ Prior to calculating genesis, intensity, and track, the data must be preprocesse
 
 To run CHAZ, change the values of the global variables outlined below contained in `Namelist.py`. Below the global variables that can be changed are outlined below.
 
-`Model = 'ERAInterim'` - model that provides parameters for downscaling (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
+`Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
 
 `ENS = 'r1i1p1'` - global model (str)
 
