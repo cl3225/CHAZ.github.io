@@ -62,19 +62,17 @@ The remaining portion of **Getting Started with CHAZ** assumes that the [Anacond
 
 2.  in your .bashrc (in your home directory) add the following lines
 
-`$ vi .bashrc'
+`$ vi .bashrc`
 
-    ## User specific aliases and functions
-    #export PYTHONPATH=/home/clee/lib/python
-    source /opt/anaconda3/etc/profile.d/conda.sh
-    export PATH=/opt/anaconda3/bin:$PATH
-    conda activate pangeoxtd27
-        
+<img width="455" alt="Screen Shot 2020-09-16 at 5 47 54 PM" src="https://user-images.githubusercontent.com/46905677/93406675-1a8b7380-f845-11ea-9afd-432c766396b7.png">
 
-    alias sls='ls -h --color=always'
-    alias la='ls -gha --color=always'
+3. Check if you can run python.
+
+`$ ipython -pylab`
 
 ## Running CHAZ 
+
+### Changing Global Variables in `Namelist.py`
 
 Prior to calculating genesis, intensity, and track, the data must be preprocessed. After preprocessing data, CHAZ returns genesis, intensity, and track information that can be passed to numerous other models, such as storm surge models and a wind compenent model.
 
@@ -113,6 +111,14 @@ To run CHAZ, change the values of the global variables outlined below contained 
 `calBam = ` - if `True`, track will  be calculated, if `False` track will not be calculated (bool)
 
 `calInt = ` - if `True`, intensity will  be calculated, if `False` intensity will not be calculated (bool)
+
+### Running CHAZ.py
+
+1. Copy the reanalysis data to your home directory in a new folder.
+
+2. Now go to that folder and run the following command:
+
+`$ ./CHAZ.py`
 
 ![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
