@@ -54,6 +54,8 @@ In the below instructions, vi is used, but any text editor will do.
 
 * [SciPy](https://scipy.org/)
 
+* Pygrib
+
 The remaining portion of **Getting Started with CHAZ** assumes that the [Anaconda Python Distribution](https://www.anaconda.com/) is installed, which is a simple method to install the above. The below steps can be done without Anaconda installed, so in that case, change accordingly. 
 
 ### Building CHAZ
