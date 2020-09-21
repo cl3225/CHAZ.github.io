@@ -120,3 +120,5 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 ![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
+### Example
+
