@@ -124,10 +124,16 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 ![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
-### Example
+###  Output of CHAZ
+
+The output of CHAZ gives a set of netCDF files with names `[model name]_[year]_ens[ensemble number]_.nc` where "model name" is the model used (also specified in `Namelist.py`), "year" is the year of the simulation, and "ensemble number" is the ensemble number represented with three digits. 
+
+The dimensions of each netCDF file are lifelength, stormID, and ensembleNum (the specific size of the dimensions can be found using the command `$ ncinfo [filename]`. "lifelength" is the amount length of time of the storm's life. "stormID" represents how many storms have been run at this year.  "ensembleNum" is the number of members in the intensity ensemble.
+
+## Example
 
 The example runs one 40 intensity ensemble from the years 2000 through 2002. 
-Download the Github repository. In the reposity, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following folders each containing a `README.txt`. 
+Download the Github repository. In the repositoryy, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directors each containing a `README.txt`. 
 
 `input`: inputs for CHAZ
 
@@ -146,16 +152,79 @@ Download the Github repository. In the reposity, there are `README.txt`, `Nameli
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `result_w.nc`: regression parameters for cases over open water
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_global_predictos.nc`, `coefficient_meanstd.nc`, `result_l.nc` and `result_w.nc` are used for Lee et al. 2018 JAMES paper (doi:https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017MS001186)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_global_predictos.nc`, `coefficient_meanstd.nc`, `result_l.nc` and `result_w.nc` 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  are used for Lee et al. 2018 JAMES paper (doi:https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017MS001186)
 
 
 
 `output`: output of CHAZ
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Empty 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Empty before running CHAZ
 
-`src`: source code for CHAZ
-
-`tools`: tools used in CHAZ
+`src`: contains all of the source code necessary to run CHAZ
 
 
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: part of preprocessing
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `module_riskModel.py`: contains functions necessary to calculate genesis, track, and predictors
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `caldetsto_track_lysis.py`: return intensities based on calGenisi.py and module_GenBamPred.py output
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `global_variable.py`: defines some global variables universal to running CHAZ
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `preprocess.py`: preprocess data
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calGenisi.py`: use TCGI seeding to find genesis points
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `module_GenBamPred.py`: calculates tracks via Beta-Advection Model
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calWindCov.py`: calculate wind mean and covariance
+
+
+`tools`: contains all of the files with tools  necessary to run the source code of CHAZ.
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `globalvariable.py`: global variables independent of run
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `module_ecmwf_daily.py`
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `module_stochastic.py`
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `regression3.py`: regression tools
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `regression4.py`: regression tools
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `ships.py`
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `util.py`
+
+
+Navigate to the downloaded repository on the Terminal. 
+
+Run the following command:`$ ./CHAZ.py`
+
+After running CHAZ, the directory `output` will contain the following files:
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2000_ens000_ibtracks.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2001_ens000_ibtracks.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000_ibtracks.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
