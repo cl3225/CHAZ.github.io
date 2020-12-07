@@ -126,16 +126,16 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 ###  Output of CHAZ
 
-The output of CHAZ gives a set of netCDF files with names `[model name]_[year]_ens[ensemble number]_.nc` where "model name" is the model used (also specified in `Namelist.py`), "year" is the year of the simulation, and "ensemble number" is the ensemble number represented with three digits. 
+The output of CHAZ gives a set of netCDF files with names `[model name]_[year]_ens[ensemble number].nc` where "model name" is the model used (also specified in `Namelist.py`), "year" is the year of the simulation, and "ensemble number" is the ensemble number represented with three digits. 
 
 The dimensions of each netCDF file are lifelength, stormID, and ensembleNum (the specific size of the dimensions can be found using the command `$ ncinfo [filename]`. "lifelength" is the amount length of time of the storm's life. "stormID" represents how many storms have been run at this year.  "ensembleNum" is the number of members in the intensity ensemble.
 
 ## Example
 
 The example runs one 40 intensity ensemble from the years 2000 through 2002. 
-Download the Github repository. In the repositoryy, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directors each containing a `README.txt`. 
+Download the Github repository. In the repositoryy, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
 
-`input`: inputs for CHAZ
+`input`: the best track data from NHC and JTWC
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_*.nc`: inputs for CHAZ
        
@@ -222,9 +222,9 @@ Run the following command:`$ ./CHAZ.py`
 After running CHAZ, the directory `output` will contain the following files:
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2000_ens000_ibtracks.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2000_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2001_ens000_ibtracks.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2001_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000_ibtracks.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
