@@ -126,3 +126,36 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 ### Example
 
+The example runs one 40 intensity ensemble from the years 2000 through 2002. 
+Download the Github repository. In the reposity, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following folders each containing a `README.txt`. 
+
+`input`: inputs for CHAZ
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_*.nc`: inputs for CHAZ
+       
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_global_predictors`: CHAZ predictors for historical events (from `bt_*.nc`). The predictors is calculated using monthly ERA-Interim reanalysis data. This file is used for calculating the seeding rate ratio for genesis model and for getting the regression stochastic error terms for intensity model
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `landmask.nc`: landmask data
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `MPI_ESM_MR`: folder with model specific data necessart for finding genesis
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `coefficient_meanstd.nc`: containing the mean and standard deviations of the predictors for historical events (i.e., those saved in bt_global_predictors.nc)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `result_l.nc`: regression parameters for near land cases
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `result_w.nc`: regression parameters for cases over open water
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_global_predictos.nc`, `coefficient_meanstd.nc`, `result_l.nc` and `result_w.nc` are used for Lee et al. 2018 JAMES paper (doi:https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017MS001186)
+
+
+
+`output`: output of CHAZ
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Empty 
+
+`src`: source code for CHAZ
+
+`tools`: tools used in CHAZ
+
+
