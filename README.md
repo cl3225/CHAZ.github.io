@@ -130,10 +130,10 @@ The output of CHAZ gives a set of netCDF files with names `[model name]_[year]_e
 
 The dimensions of each netCDF file are lifelength, stormID, and ensembleNum (the specific size of the dimensions can be found using the command `$ ncinfo [filename]`. "lifelength" is the amount length of time of the storm's life. "stormID" represents how many storms have been run at this year.  "ensembleNum" is the number of members in the intensity ensemble.
 
-## Example
+## Example 1: Running CHAZ without Preprocessing
 
-The example runs one 40 intensity ensemble from the years 2000 through 2002. 
-Download the Github repository. In the repositoryy, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
+This example runs one 40 intensity ensemble from the years 2000 through 2002. 
+Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
 
 `input`: the best track data from NHC and JTWC
 
@@ -228,3 +228,9 @@ After running CHAZ, the directory `output` will contain the following files:
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
+
+
+## Example 2: Running CHAZ with Preprocessing
+
+This example, like Example 1, runs one 40 intensity ensemble from the years 2000 through 2002; however, unlike Example 1, there is preprocessing. 
+Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
