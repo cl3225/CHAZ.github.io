@@ -234,3 +234,13 @@ After running CHAZ, the directory `output` will contain the following files:
 
 This example, like Example 1, runs one 40 intensity ensemble from the years 2000 through 2002; however, unlike Example 1, there is preprocessing. 
 Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
+
+There are three components to preprocessing:
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: part of preprocessing
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `preprocess.py`:
