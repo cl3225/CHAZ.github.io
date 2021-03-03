@@ -31,19 +31,17 @@ TBD
 
 ### System dependencies 
 
-The CHAZ model is developed in python2 and has only been running on linux machines. Here we provide our experience. However, it is by no means that CHAZ can only be run on a linux system. We welcome users' contribution on their experiences of using the CHAZ model, any comments of the model, and any improvment of the CHAZ model.
+The CHAZ model was developed in python2 and has only been running on linux machines. Here we provide our experience. However, it is by no means that CHAZ can only be run on a linux system. We welcome users' contribution in terms of operationg system. We also appreciate any comments, bug-discovery, and improvment of the CHAZ model.
 
 #### Operating System
 
 * Linux
 
-#### Text Editor 
+%#### Text Editor 
 
-In the below instructions, vi is used, but any text editor will do.
+%In the below instructions, vi is used, but any text editor will do.
 
-#### Python
-
-* Python 2
+#### Python v2
 
 * [NumPy](https://numpy.org/)
 
@@ -53,7 +51,7 @@ In the below instructions, vi is used, but any text editor will do.
 
 * Pygrib
 
-The remaining portion of **Getting Started with CHAZ** assumes that the [Anaconda Python Distribution](https://www.anaconda.com/) is installed, which is a simple method to install the above. The below steps can be done without Anaconda installed, so in that case, change accordingly. 
+The remaining portion of **Getting Started with CHAZ** assumes that the [Anaconda Python Distribution](https://www.anaconda.com/) is installed. The below steps can be done without Anaconda installed, so in that case, change accordingly. 
 
 ### Building CHAZ
 
