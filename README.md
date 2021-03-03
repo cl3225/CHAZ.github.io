@@ -37,9 +37,9 @@ The CHAZ model was developed in python2 and has only been running on linux machi
 
 * Linux
 
-%#### Text Editor 
+#### Text Editor (REMOVE)
 
-%In the below instructions, vi is used, but any text editor will do.
+In the below instructions, vi is used, but any text editor will do.
 
 #### Python v2
 
@@ -55,27 +55,28 @@ The remaining portion of **Getting Started with CHAZ** assumes that the [Anacond
 
 ### Building CHAZ
 
-1. Confirm you are using bash shell: `echo $0`
+1. Confirm you are using bash shell: `echo $0` (REMOVE)
 
 -bash
 
-2.  in your .bashrc (in your home directory) add the following lines
+2.  in your .bashrc (in your home directory) add the following lines (REMOVE)
 
 `$ vi .bashrc`
 
 <img width="455" alt="Screen Shot 2020-09-16 at 5 47 54 PM" src="https://user-images.githubusercontent.com/46905677/93406675-1a8b7380-f845-11ea-9afd-432c766396b7.png">
 
-3. Check if you can run python.
+3. Check if you can run python. (REMOVE)
 
 `$ ipython -pylab`
 
-## Running CHAZ 
+## Basic CHAZ structure
 
-### Changing Global Variables in `Namelist.py`
+In CHAZ, Namelist.py controls all global variables such as the source of the global model forcing, the ensemble member of that global model, the version of genesis module, numbers of track and intensity ensemble, and whether you are doing CHAZ-pre or CHAZ downscaling. In theory, Namelist.py is the only file you need to modify. CHAZ.py reads in Namelist.py and is the script that call for all the modules/subroutines. Below we describe input varables that need to be modified when conducting CHAZ-pre and CHAZ downscaling.  
 
-Prior to calculating genesis, intensity, and track, the data must be preprocessed. After preprocessing data, CHAZ returns genesis, intensity, and track information that can be passed to numerous other models, such as storm surge models and a wind compenent model.
+## CHAZ-pre
+### Changing Global Variables in Namelist.py
+in preocess. (expected outcome)
 
-To run CHAZ, change the values of the global variables outlined below contained in `Namelist.py`. Below the global variables that can be changed are outlined below.
 
 `Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
 
@@ -83,25 +84,51 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 `TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
 
-`CHAZ_ENS = 1` - number of ensemble members per year (int)
+`Year1 = ` - the beginning year (int)
 
-`CHAZ__Int_ENS = 40` - number of ensemble members for intensity model (int)
+`Year2 = ` - tne end inner year (int)
 
-`seedN = 1000` - annual seeding rate for random seeding (int)
+`runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
+
+Adding others.
+
+### getting TCGI and PI 
+in preocess.(expected outcome)
+
+### get mean and standard deviations of the predictors
+in preocess. (expected outcome)
+
+### Checking Initial conditions
+Prior to conducting CHAZ downsclinag, we should check the initial conditions those are nessary for CHAZ runs. They are XXXXX 
+
+## Running CHAZ 
+
+
+### Changing Global Variables in `Namelist.py`
+
+`Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
+
+`ENS = 'r1i1p1'` - global model (str)
+
+`TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
+
+`CHAZ_ENS = 1` - number of track ensemble members per year (int)
+
+`CHAZ__Int_ENS = 40` - number of intensity ensemble members (int)
+
+`seedN = 1000` - annual seeding rate for random seeding (int). This function is currrent under development.
 
 `landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
 
-`ipath = ''` - location of environmental data for seeding ratio (str)
+`ipath = ''` - location of environmental data TCGI, and mean/std of the predictors (str)
 
 `opath = ''` - location of pik file with observed best track global predictors (str)
 
 `obs_bt_path = ''` - location of observed best track data (str)
 
-`Year1 = ` - first year (int)
+`Year1 = ` - the beginning year (int)
 
-`Year2 = ` - last year (int)
-
-`runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
+`Year2 = ` - tne end inner year (int)
 
 `runCHAZ = ` - if `True`, CHAZ will run, if `False` CHAZ will not run (bool)
 
@@ -113,9 +140,9 @@ To run CHAZ, change the values of the global variables outlined below contained 
 
 ### Running CHAZ.py
 
-1. Copy the reanalysis data to your home directory in a new folder.
+1. Make sure all the inputs are in the ipath, opath, and obs_bt_path 
 
-2. Now go to that folder and run the following command:`$ ./CHAZ.py`
+2. Simply type the following command:`$ ./CHAZ.py`
 
 ![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
@@ -225,7 +252,7 @@ After running CHAZ, the directory `output` will contain the following files:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
 
 
-## Example 2: Running CHAZ with Preprocessing
+## Example 2: Running CHAZ with Preprocessing ( Move some of the information here to the CHAZ-pre, and REMOVE this part)
 
 This example, like Example 1, runs one 40 intensity ensemble from the years 2000 through 2002; however, unlike Example 1, there is preprocessing. 
 Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
