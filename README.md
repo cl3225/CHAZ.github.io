@@ -73,6 +73,9 @@ The remaining portion of **Getting Started with CHAZ** assumes that the [Anacond
 
 In CHAZ, Namelist.py controls all global variables such as the source of the global model forcing, the ensemble member of that global model, the version of genesis module, numbers of track and intensity ensemble, and whether you are doing CHAZ-pre or CHAZ downscaling. In theory, Namelist.py is the only file you need to modify. CHAZ.py reads in Namelist.py and is the script that call for all the modules/subroutines. Below we describe input varables that need to be modified when conducting CHAZ-pre and CHAZ downscaling.  
 
+I  think here is a place introduce CHAZ's structure - src, tool, util, etc. Not in the example. 
+
+
 ## CHAZ-pre
 ### Changing Global Variables in Namelist.py
 in preocess. (expected outcome)
