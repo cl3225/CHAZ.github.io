@@ -31,7 +31,7 @@ TBD
 
 ### System dependencies 
 
-The CHAZ model is developed in python2 and has only been running on linux machines. Here we provide our experience. However, it is by no means that CHAZ can only be run on a linux system. We welcome users' contribution on their experiences using the CHAZ model, any comments of the model, and any improvment of the CHAZ model.
+The CHAZ model is developed in python2 and has only been running on linux machines. Here we provide our experience. However, it is by no means that CHAZ can only be run on a linux system. We welcome users' contribution on their experiences of using the CHAZ model, any comments of the model, and any improvment of the CHAZ model.
 
 #### Operating System
 
