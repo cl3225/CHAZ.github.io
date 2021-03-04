@@ -22,10 +22,6 @@ The CHAZ model was developed in python2 and has only been running on linux machi
 
 * Linux
 
-#### Text Editor (REMOVE)
-
-In the below instructions, vi is used, but any text editor will do.
-
 #### Python v2
 
 * [NumPy](https://numpy.org/)
