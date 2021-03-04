@@ -247,3 +247,6 @@ After running CHAZ, the directory `output` will contain the following files:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
 
+
+
+*Disclaimer: The output is not bias-corrected. Some bias correction may be necessary to estimate hurricane activity at the regional level.
