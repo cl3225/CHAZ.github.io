@@ -208,7 +208,7 @@ Like the track component, the intensity component involves the further evolution
 
 `calInt = ` - if `True`, intensity will  be calculated, if `False` intensity will not be calculated (bool)
 
-### Running CHAZ.py
+### CHAZ Downscaling
 
 1. Make sure all the inputs are in the ipath, opath, and obs_bt_path 
 
