@@ -124,8 +124,9 @@ In CHAZ, Namelist.py controls all global variables such as the source of the glo
 
 Download TCGI data, load in global model data, load in PI
 
-### getting PI 
+### getting PI
 in preprocess.(expected outcome)
+*Note preprocessing only needs to be done once for each set of years, model, and intensity (a single edited version of `Namelist.py`)
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calWindCov.py`: calculate wind covariance
 
