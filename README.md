@@ -60,7 +60,8 @@ In CHAZ, Namelist.py controls all global variables such as the source of the glo
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_global_predictos.nc`, `coefficient_meanstd.nc`, `result_l.nc` and `result_w.nc` 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  are used for Lee et al. 2018 JAMES paper (doi:https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017MS001186)
 
-Below, we describe source code that can also be modified if ____
+
+
 
 `src`: contains all of the source code necessary to run CHAZ
 
@@ -92,6 +93,7 @@ Below, we describe source code that can also be modified if ____
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calWindCov.py`: calculate wind mean and covariance
 
 
+
 `tools`: contains all of the files with tools  necessary to run the source code of CHAZ.
 
 
@@ -117,6 +119,21 @@ Below, we describe source code that can also be modified if ____
 
 
 ## CHAZ-pre
+
+### Download data 
+
+Download TCGI data, load in global model data, load in PI
+
+### getting PI 
+in preprocess.(expected outcome)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calWindCov.py`: calculate wind covariance
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `preprocess.py`: Read PI, and get grid spacing. Interpolate input data to fit with grid. Update covariance.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: based on input grid convert wind covariance to wind covariance matrix
+
+
 ### Changing Global Variables in Namelist.py
 in preprocess. (expected outcome)
 
@@ -134,15 +151,6 @@ in preprocess. (expected outcome)
 `runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
 
 Adding others.
-
-### getting TCGI and PI 
-in preprocess.(expected outcome)
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: part of preprocessing
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `preprocess.py`
-
 
 ### get mean and standard deviations of the predictors
 in preprocess. (expected outcome)
