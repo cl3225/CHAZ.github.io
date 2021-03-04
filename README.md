@@ -8,21 +8,6 @@ The Columbia HAZard model (CHAZ) is a statistical-dynamical downscaling model fo
 
 The model is structured into CHAZ and its preprocessing (CHAZ-pre). 
 
-#### 3 Components of CHAZ
-
-
-Genesis | Track | Intensity
------------- | ------------- | -------------
-seeds domain with weak vortices  | further evolution of storm beyond genesis | further evolution of storm beyond genesis 
-seeding rate, found via TCGI, depends on environmental conditions | moves storm by a beta advection model | 2 components: empirical linear regression model and stochastic element
-for each seed, genesis location and date are chosen randomly on a 1 km resolution within the a selected month | predictors found based on beta-advection model|  empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment 
-&nbsp;|&nbsp;|  stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics 
-&nbsp;|&nbsp;|  *intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions
-
-
-
-![first_flow_chart](https://user-images.githubusercontent.com/46905677/93243910-bb8f0700-f73d-11ea-80ad-3ae64ea87326.jpg)
-
 ## Getting Started with CHAZ
 
 ### Getting the code
@@ -73,94 +58,8 @@ The remaining portion of **Getting Started with CHAZ** assumes that the [Anacond
 
 In CHAZ, Namelist.py controls all global variables such as the source of the global model forcing, the ensemble member of that global model, the version of genesis module, numbers of track and intensity ensemble, and whether you are doing CHAZ-pre or CHAZ downscaling. In theory, Namelist.py is the only file you need to modify. CHAZ.py reads in Namelist.py and is the script that call for all the modules/subroutines. Below we describe input varables that need to be modified when conducting CHAZ-pre and CHAZ downscaling.  
 
-I  think here is a place introduce CHAZ's structure - src, tool, util, etc. Not in the example. 
 
-
-## CHAZ-pre
-### Changing Global Variables in Namelist.py
-in preocess. (expected outcome)
-
-
-`Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
-
-`ENS = 'r1i1p1'` - global model (str)
-
-`TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
-
-`Year1 = ` - the beginning year (int)
-
-`Year2 = ` - tne end inner year (int)
-
-`runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
-
-Adding others.
-
-### getting TCGI and PI 
-in preocess.(expected outcome)
-
-### get mean and standard deviations of the predictors
-in preocess. (expected outcome)
-
-### Checking Initial conditions
-Prior to conducting CHAZ downsclinag, we should check the initial conditions those are nessary for CHAZ runs. They are XXXXX 
-
-## Running CHAZ 
-
-
-### Changing Global Variables in `Namelist.py`
-
-`Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
-
-`ENS = 'r1i1p1'` - global model (str)
-
-`TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
-
-`CHAZ_ENS = 1` - number of track ensemble members per year (int)
-
-`CHAZ__Int_ENS = 40` - number of intensity ensemble members (int)
-
-`seedN = 1000` - annual seeding rate for random seeding (int). This function is currrent under development.
-
-`landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
-
-`ipath = ''` - location of environmental data TCGI, and mean/std of the predictors (str)
-
-`opath = ''` - location of pik file with observed best track global predictors (str)
-
-`obs_bt_path = ''` - location of observed best track data (str)
-
-`Year1 = ` - the beginning year (int)
-
-`Year2 = ` - tne end inner year (int)
-
-`runCHAZ = ` - if `True`, CHAZ will run, if `False` CHAZ will not run (bool)
-
-`calGen = ` - if `True`, genesis will  be calculated, if `False` genesis will not be calculated (bool)
-
-`calBam = ` - if `True`, track will  be calculated, if `False` track will not be calculated (bool)
-
-`calInt = ` - if `True`, intensity will  be calculated, if `False` intensity will not be calculated (bool)
-
-### Running CHAZ.py
-
-1. Make sure all the inputs are in the ipath, opath, and obs_bt_path 
-
-2. Simply type the following command:`$ ./CHAZ.py`
-
-![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
-
-###  Output of CHAZ
-
-The output of CHAZ gives a set of netCDF files with names `[model name]_[year]_ens[ensemble number].nc` where "model name" is the model used (also specified in `Namelist.py`), "year" is the year of the simulation, and "ensemble number" is the ensemble number represented with three digits. 
-
-The dimensions of each netCDF file are lifelength, stormID, and ensembleNum (the specific size of the dimensions can be found using the command `$ ncinfo [filename]`. "lifelength" is the amount length of time of the storm's life. "stormID" represents how many storms have been run at this year.  "ensembleNum" is the number of members in the intensity ensemble.
-
-## Example 1: Running CHAZ without Preprocessing
-
-This example runs one 40 intensity ensemble from the years 2000 through 2002. 
-Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
-
-`input`: the best track data from NHC and JTWC
+`input`: the directory containing best track data from NHC and JTWC
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_*.nc`: inputs for CHAZ
        
@@ -180,11 +79,7 @@ Download the Github repository. In the repository, there are `README.txt`, `Name
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; `bt_global_predictos.nc`, `coefficient_meanstd.nc`, `result_l.nc` and `result_w.nc` 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  are used for Lee et al. 2018 JAMES paper (doi:https://agupubs.onlinelibrary.wiley.com/doi/full/10.1002/2017MS001186)
 
-
-
-`output`: output of CHAZ
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Empty before running CHAZ
+Below, we describe source code that can also be modified if ____
 
 `src`: contains all of the source code necessary to run CHAZ
 
@@ -240,6 +135,120 @@ Download the Github repository. In the repository, there are `README.txt`, `Name
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `util.py`
 
 
+## CHAZ-pre
+### Changing Global Variables in Namelist.py
+in preprocess. (expected outcome)
+
+
+`Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
+
+`ENS = 'r1i1p1'` - global model (str)
+
+`TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
+
+`Year1 = ` - the beginning year (int)
+
+`Year2 = ` - tne end inner year (int)
+
+`runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
+
+Adding others.
+
+### getting TCGI and PI 
+in preprocess.(expected outcome)
+
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: part of preprocessing
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `preprocess.py`
+
+
+### get mean and standard deviations of the predictors
+in preprocess. (expected outcome)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
+
+### Checking Initial conditions
+Prior to conducting CHAZ downsclinag, we should check the initial conditions those are nessary for CHAZ runs. They are XXXXX 
+
+## Running CHAZ 
+
+#### 3 Components of CHAZ
+
+
+Genesis | Track | Intensity
+------------ | ------------- | -------------
+seeds domain with weak vortices  | further evolution of storm beyond genesis | further evolution of storm beyond genesis 
+seeding rate, found via TCGI, depends on environmental conditions | moves storm by a beta advection model | 2 components: empirical linear regression model and stochastic element
+for each seed, genesis location and date are chosen randomly on a 1 km resolution within the a selected month | predictors found based on beta-advection model|  empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment 
+&nbsp;|&nbsp;|  stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics 
+&nbsp;|&nbsp;|  *intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions
+
+CHAZ consists of three main computations: Genesis, Track, and Intensity. 
+
+The genesis component seeds the domain with weak vortices; the seeding rate, found via TCGI, depends on environmental conditions. For each seed, genesis location and date are chosen randomly on a 1 km resolution within the a selected month.
+
+The track component involves the further evolution of the TC beyond genesis. Through a beta-advection model, this component moves the storm and then finds predictors based on the model.  
+
+Like the track component, the intensity component involves the further evolution of the TC beyond genesis. The instensity computation consists of an empirical linear regression model and a stochastic element. The empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment, and the stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics; *Note intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions.
+
+![first_flow_chart](https://user-images.githubusercontent.com/46905677/93243910-bb8f0700-f73d-11ea-80ad-3ae64ea87326.jpg)
+
+### Changing Global Variables in `Namelist.py`
+
+`Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
+
+`ENS = 'r1i1p1'` - global model (str)
+
+`TCGIinput = 'TCGI_CRH_SST'` - environmental parameters used as input for TCGI (str)
+
+`CHAZ_ENS = 1` - number of track ensemble members per year (int)
+
+`CHAZ__Int_ENS = 40` - number of intensity ensemble members (int)
+
+`seedN = 1000` - annual seeding rate for random seeding (int). This function is currrent under development.
+
+`landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
+
+`ipath = ''` - location of environmental data TCGI, and mean/std of the predictors (str)
+
+`opath = ''` - location of pik file with observed best track global predictors (str)
+
+`obs_bt_path = ''` - location of observed best track data (str)
+
+`Year1 = ` - the beginning year (int)
+
+`Year2 = ` - tne end inner year (int)
+
+`runCHAZ = ` - if `True`, CHAZ will run, if `False` CHAZ will not run (bool)
+
+`calGen = ` - if `True`, genesis will  be calculated, if `False` genesis will not be calculated (bool)
+
+`calBam = ` - if `True`, track will  be calculated, if `False` track will not be calculated (bool)
+
+`calInt = ` - if `True`, intensity will  be calculated, if `False` intensity will not be calculated (bool)
+
+### Running CHAZ.py
+
+1. Make sure all the inputs are in the ipath, opath, and obs_bt_path 
+
+2. Check that `output` is empty before running CHAZ
+
+3. Simply type the following command:`$ ./CHAZ.py`
+
+![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
+
+###  Output of CHAZ
+
+The output of CHAZ gives a set of netCDF files with names `[model name]_[year]_ens[ensemble number].nc` where "model name" is the model used (also specified in `Namelist.py`), "year" is the year of the simulation, and "ensemble number" is the ensemble number represented with three digits. 
+
+The dimensions of each netCDF file are lifelength, stormID, and ensembleNum (the specific size of the dimensions can be found using the command `$ ncinfo [filename]`. "lifelength" is the amount length of time of the storm's life. "stormID" represents how many storms have been run at this year.  "ensembleNum" is the number of members in the intensity ensemble.
+
+## Example 1: Running CHAZ without Preprocessing
+
+This example runs one 40 intensity ensemble from the years 2000 through 2002. 
+Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
+
 Navigate to the downloaded repository on the Terminal. 
 
 Run the following command:`$ ./CHAZ.py`
@@ -254,18 +263,3 @@ After running CHAZ, the directory `output` will contain the following files:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
 
-
-## Example 2: Running CHAZ with Preprocessing ( Move some of the information here to the CHAZ-pre, and REMOVE this part)
-
-This example, like Example 1, runs one 40 intensity ensemble from the years 2000 through 2002; however, unlike Example 1, there is preprocessing. 
-Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the following directories each containing a `README.txt`. 
-
-There are three components to preprocessing:
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: part of preprocessing
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
-
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `preprocess.py`:
