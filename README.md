@@ -156,15 +156,6 @@ Prior to conducting CHAZ downsclinag, we should check the initial conditions tho
 
 #### 3 Components of CHAZ
 
-
-Genesis | Track | Intensity
------------- | ------------- | -------------
-seeds domain with weak vortices  | further evolution of storm beyond genesis | further evolution of storm beyond genesis 
-seeding rate, found via TCGI, depends on environmental conditions | moves storm by a beta advection model | 2 components: empirical linear regression model and stochastic element
-for each seed, genesis location and date are chosen randomly on a 1 km resolution within the a selected month | predictors found based on beta-advection model|  empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment 
-&nbsp;|&nbsp;|  stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics 
-&nbsp;|&nbsp;|  *intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions
-
 CHAZ consists of three main computations: Genesis, Track, and Intensity. 
 
 The genesis component seeds the domain with weak vortices; the seeding rate, found via TCGI, depends on environmental conditions. For each seed, genesis location and date are chosen randomly on a 1 km resolution within the a selected month.
