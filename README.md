@@ -158,7 +158,7 @@ in preprocess. (expected outcome)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
 
 ### Checking Initial conditions
-Prior to conducting CHAZ downsclinag, we should check the initial conditions those are nessary for CHAZ runs. They are XXXXX 
+Prior to conducting CHAZ downsclinag, we should check the initial conditions those are nessary for CHAZ runs. They are TCGI_YYYY.mat, r1i1p1_YYYY.nc (from calPreprocess), A_YYYYMM.nc (from calA), coefficent_meanstd.nc (getMeanStd.py).
 
 ## Running CHAZ 
 
