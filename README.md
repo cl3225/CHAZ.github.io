@@ -249,7 +249,7 @@ After running CHAZ, the directory `output` will contain the following files:
 
 
 
-### Miscellaneous notes
+## Miscellaneous notes
 
 
 *Disclaimer: The output is not bias-corrected. Some bias correction may be necessary to estimate hurricane activity at the regional level.
