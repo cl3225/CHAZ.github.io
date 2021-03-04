@@ -38,21 +38,6 @@ In the below instructions, vi is used, but any text editor will do.
 
 The remaining portion of **Getting Started with CHAZ** assumes that the [Anaconda Python Distribution](https://www.anaconda.com/) is installed. The below steps can be done without Anaconda installed, so in that case, change accordingly. 
 
-### Building CHAZ
-
-1. Confirm you are using bash shell: `echo $0` (REMOVE)
-
--bash
-
-2.  in your .bashrc (in your home directory) add the following lines (REMOVE)
-
-`$ vi .bashrc`
-
-<img width="455" alt="Screen Shot 2020-09-16 at 5 47 54 PM" src="https://user-images.githubusercontent.com/46905677/93406675-1a8b7380-f845-11ea-9afd-432c766396b7.png">
-
-3. Check if you can run python. (REMOVE)
-
-`$ ipython -pylab`
 
 ## Basic CHAZ structure
 
