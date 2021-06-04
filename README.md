@@ -4,7 +4,7 @@
 ## Overview 
 
 
-The Columbia HAZard model (CHAZ) is a statistical-dynamical downscaling model for estimating tropical cyclone hazard. The CHAZ model three primary components for describing tropical cyclone activity from genesis to lysis, they are genesis, track, and intensity modules. The genesis module uses Tropical Cyclone Genesis Index (TCGI, developed by Tippett et al, 2011) to estimate the seeding rate of the storm precursors. The seeds are then passed to the a  Beta-Advection Model (BAM) that moves the storm forward with giving environmental sterring flow. The intensity module then evolves storms beyond genesis using an Autoregressive Model that involves a deterministic and a stochastic forcing elements. The underlying science of the CHAZ model can be found at [Lee et al. 2018](https://doi.org/10.1002/2017MS001186)).
+The Columbia HAZard model (CHAZ) is a statistical-dynamical downscaling model for estimating tropical cyclone hazard. The CHAZ model consists of three primary components for describing tropical cyclone activity from genesis to lysis; these components are genesis, track, and intensity modules. The genesis module uses Tropical Cyclone Genesis Index (TCGI, developed by Tippett et al, 2011) to estimate the seeding rate of the storm precursors. The seeds are then passed to a  Beta-Advection Model (BAM) that moves the storm forward with giving environmental sterring flow. The intensity module then evolves storms beyond genesis using an Autoregressive Model that involves a deterministic and a stochastic forcing elements. The underlying science of the CHAZ model can be found at [Lee et al. 2018](https://doi.org/10.1002/2017MS001186)).
 
 The model is structured into CHAZ and its preprocessing (CHAZ-pre). 
 
@@ -16,7 +16,7 @@ TBD
 
 ### System dependencies 
 
-The CHAZ model was developed in python2 and has only been running on linux machines. Here we provide our experience. However, it is by no means that CHAZ can only be run on a linux system. We welcome users' contribution in terms of operationg system. We also appreciate any comments, bug-discovery, and improvment of the CHAZ model.
+The CHAZ model was developed in python2 and has only been running on linux machines. Here we provide our experience. However, this does not mean CHAZ can only be run on a linux system. We welcome users' contributions in terms of operating system. We also appreciate any comments, bug-discovery, and improvement of the CHAZ model.
 
 #### Operating System
 
@@ -37,7 +37,7 @@ The remaining portion of **Getting Started with CHAZ** assumes that the [Anacond
 
 ## Basic CHAZ structure
 
-In CHAZ, Namelist.py controls all global variables such as the source of the global model forcing, the ensemble member of that global model, the version of genesis module, numbers of track and intensity ensemble, and whether you are doing CHAZ-pre or CHAZ downscaling. In theory, Namelist.py is the only file you need to modify. CHAZ.py reads in Namelist.py and is the script that call for all the modules/subroutines. Below we describe input varables that need to be modified when conducting CHAZ-pre and CHAZ downscaling.  
+In CHAZ, Namelist.py defines all global variables such as the source of the global model forcing, the ensemble members of that global model, the version of genesis module, numbers of track and intensity ensemble members, and whether you are doing CHAZ-pre or CHAZ downscaling. In theory, Namelist.py is the only file you need to modify. CHAZ.py reads in Namelist.py and is the script that calls for all the modules/subroutines. Below we describe input variables that need to be modified when conducting CHAZ-pre and CHAZ downscaling.  
 
 
 `input`: the directory containing best track data from NHC and JTWC
@@ -69,7 +69,7 @@ In CHAZ, Namelist.py controls all global variables such as the source of the glo
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `calA.py`: part of preprocessing
 
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in `coefficient_meanstd.nc` if user does not have file
 
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `module_riskModel.py`: contains functions necessary to calculate genesis, track, and predictors
@@ -150,11 +150,10 @@ in preprocess. (expected outcome)
 
 `Year1 = ` - the beginning year (int)
 
-`Year2 = ` - tne end inner year (int)
+`Year2 = ` - the end year (int)
 
 `runPreprocess = ` - if `True`, preprocessing will run, if `False` preprocessing will not run (bool)
 
-Adding others.
 
 ### get mean and standard deviations of the predictors
 in preprocess. (expected outcome)
@@ -162,7 +161,7 @@ in preprocess. (expected outcome)
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `getMeanStd.py`: not used in example, but used to calculate data in coefficient_meanstd.nc if user does not have file
 
 ### Checking Initial conditions
-Prior to conducting CHAZ downsclinag, we should check the initial conditions those are nessary for CHAZ runs. They are TCGI_YYYY.mat, r1i1p1_YYYY.nc (from calPreprocess), A_YYYYMM.nc (from calA), coefficent_meanstd.nc (getMeanStd.py).
+Prior to conducting CHAZ downscaling, we should check the initial conditions those are nessary for CHAZ runs. They are TCGI_YYYY.mat, r1i1p1_YYYY.nc (from calPreprocess), A_YYYYMM.nc (from calA), coefficent_meanstd.nc (getMeanStd.py).
 
 ## Running CHAZ 
 
@@ -190,7 +189,7 @@ Like the track component, the intensity component involves the further evolution
 
 `CHAZ__Int_ENS = 40` - number of intensity ensemble members (int)
 
-`seedN = 1000` - annual seeding rate for random seeding (int). This function is currrent under development.
+`seedN = 1000` - annual seeding rate for random seeding (int). This function is currently under development.
 
 `landmaskfile = 'landmask.nc'` - land mask file (NETCDF)
 
