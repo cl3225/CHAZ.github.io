@@ -182,6 +182,8 @@ Like the track component, the intensity component involves the further evolution
 
 ### Changing Global Variables in `Namelist.py`
 
+<img width="438" alt="Screen Shot 2021-06-09 at 7 25 32 PM" src="https://user-images.githubusercontent.com/46905677/121441820-55878700-c93f-11eb-85a4-3061f782665f.png">
+
 `Model = 'ERAInterim'` - model that provides reanalysis data (str), default is European Center for Medium Range Weather Forecasts interim reanalysis
 
 `ENS = 'r1i1p1'` - global model (str)
