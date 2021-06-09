@@ -173,7 +173,7 @@ The genesis component seeds the domain with weak vortices; the seeding rate, fou
 
 The track component involves the further evolution of the TC beyond genesis. Through a beta-advection model, this component moves the storm and then finds predictors based on the model.  
 
-Like the track component, the intensity component involves the further evolution of the TC beyond genesis. The instensity computation consists of an empirical linear regression model and a stochastic element. The empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment, and the stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics; *Note intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions.
+Like the track component, the intensity component involves the further evolution of the TC beyond genesis. The intensity computation consists of an empirical linear regression model and a stochastic element. The empirical multiple linear regression model advances TC in time along track based on surrounding large scale environment, and the stochastic element, which only depends on the storm's current state and recent history, accounts for internal storm dynamics; *Note intensity at landfall is separate and uses separate regression model that takes into account proximity to land and other environmental conditions.
 
 ![flow_chart](https://user-images.githubusercontent.com/46905677/121254007-a4112480-c85e-11eb-92a9-621f9c1afc7a.png)
 
