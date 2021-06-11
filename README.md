@@ -178,7 +178,6 @@ Like the track component, the intensity component involves the further evolution
 ![flow_chart](https://user-images.githubusercontent.com/46905677/121254007-a4112480-c85e-11eb-92a9-621f9c1afc7a.png)
 
 
-![first_flow_chart](https://user-images.githubusercontent.com/46905677/93243910-bb8f0700-f73d-11ea-80ad-3ae64ea87326.jpg)
 
 ### Changing Global Variables in `Namelist.py`
 
@@ -224,7 +223,6 @@ Like the track component, the intensity component involves the further evolution
 
 3. Simply type the following command:`$ ./CHAZ.py`
 
-![second_flow_chart](https://user-images.githubusercontent.com/46905677/93244535-be3e2c00-f73e-11ea-80b5-2f59f6d62a63.jpg)
 
 ###  Output of CHAZ
 
