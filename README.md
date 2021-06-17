@@ -249,6 +249,19 @@ After running CHAZ, the directory `output` will contain the following files:
 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  `MPI_ESM_MR_2002_ens000.nc`: netCDF containing latitide, longitude, maximum wind speed, and time of resulting ensemble
 
+
+## Example 2: Preprocessing
+
+Download the Github repository. In the repository, there are `README.txt`, `Namelist.py`, `CHAZ.py`, and the directories each previously described containing a `README.txt`. 
+
+In `Namelist.py`, change `monthlycsv` and `dailycsv` to wherever monthly and daily CMIP6 data is on your system (highlighted in the image below). In the code, CMIP6 is retrieved from URLs on our system; depending on how the data is stored, this may need to be changed.
+
+<img width="390" alt="Screen Shot 2021-06-16 at 5 43 12 PM" src="https://user-images.githubusercontent.com/46905677/122450094-782b2880-cf5b-11eb-8eae-42fb908e0957.png">
+
+As with the above example, assuming all the CMIP6 paths are correct, the preprocessing can be run with the simple command `./CHAZ.py`.
+
+After running `./CHAZ.py`, the predictors and the wind covariance matrices will be in `output`.
+
 ## Disclaimer
 
 The output is not bias-corrected. Some bias correction may be necessary to estimate hurricane activity at the regional level.
