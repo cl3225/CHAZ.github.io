@@ -127,7 +127,7 @@ PI & TCGI calculations are not included in this package however one can check ht
 
 ### Data preparation for BAM and Autoregressive Intensity Model:
 EXPECTED OUTCOME: 
-Output of genesis seeding is used for BAM. The genesis seeding takes the TCGI*.mat files given that one can calculate via methods described in the papers above.
+Output of genesis seeding is used for BAM. The genesis seeding takes the TCGI*.mat files given that one can calculate via methods described in the papers above. For BAM and the Autoregressive Intensity Model, the wind covariance input and predictors are used, contained in the `input` directory.
 
 ### Get mean and standard deviations of the predictors:
 This is not part of CHAZ.py. 
