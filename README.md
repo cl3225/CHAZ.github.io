@@ -120,12 +120,17 @@ In CHAZ, Namelist.py defines all global variables such as the source of the glob
 
 ## CHAZ-pre
 
-### Download data 
+### Download data, getting PI and TCGI
 
-Download TCGI data, load in global model data, load in PI
+EXPECTED OUTCOME: 
+PI & TCGI calculations are not included in this package however one can check https://gmd.copernicus.org/articles/14/2351/2021/ and Tippett et al. (2010) https://journals.ametsoc.org/view/journals/clim/24/9/2010jcli3811.1.xml for TCGI coefficients. Here we list variables that are used for BAM and Autoregressive Intensity Model. These variables are monthly zonal and meridional winds (U & V) at 250 and 850hPa, monthly relative_humidity and temperature at 850,500,700 hPa. Daily zonal and meridional wind at 250 and 850hPa.  
 
-### getting PI
-in preprocess.(expected outcome)
+### Data preparation for BAM and Autoregressive Intensity Model:
+EXPECTED OUTCOME: 
+Output of genesis seeding is used for BAM. The genesis seeding takes the TCGI*.mat files given that one can calculate via methods described in the papers above.
+
+### Get mean and standard deviations of the predictors:
+This is not part of CHAZ.py. 
 
 
 *Note preprocessing only needs to be done once for each set of years, model, and intensity (a single edited version of `Namelist.py`)
