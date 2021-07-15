@@ -22,6 +22,7 @@ The CHAZ model was developed in python2 and has only been running on linux machi
 
 * Linux
 
+
 #### Python v2
 
 * [NumPy](https://numpy.org/)
@@ -31,6 +32,59 @@ The CHAZ model was developed in python2 and has only been running on linux machi
 * [SciPy](https://scipy.org/)
 
 * Pygrib
+
+#### Setting Up Virtual Environment: If [Anaconda Python Distribution](https://www.anaconda.com/) is Installed 
+
+1) install anaconda3
+
+2) conda create --name py27 python=2.7 anaconda
+
+3) conda activate py27
+
+4) pip install the following code:
+pip install numpy==1.15.4
+
+pip install pandas==0.24.1
+
+pip install scipy==1.2.0
+
+pip install netcdf4==1.4.2
+
+pip install matplotlib==2.2.3
+
+pip install xarray==0.11.3
+
+pip install statsmodels==0.9.0
+
+pip install cftime==1.0.3.4
+
+pip install netcdftime==1.0.0a2
+
+#### Setting Up Virtual Environment: If [Anaconda Python Distribution](https://www.anaconda.com/) is NOT Installed
+
+1) virtualenv -p /usr/bin/python2.7 venv
+
+2) source venv/bin/activate
+
+3) pip install the following code: 
+pip install numpy==1.15.4
+
+pip install pandas==0.24.1
+
+pip install scipy==1.2.0
+
+pip install netcdf4==1.4.2
+
+pip install matplotlib==2.2.3
+
+pip install xarray==0.11.3
+
+pip install statsmodels==0.9.0
+
+pip install cftime==1.0.3.4
+
+pip install netcdftime==1.0.0a2
+
 
 The remaining portion of **Getting Started with CHAZ** assumes that the [Anaconda Python Distribution](https://www.anaconda.com/) is installed. The below steps can be done without Anaconda installed, so in that case, change accordingly. 
 
